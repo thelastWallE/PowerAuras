@@ -175,7 +175,11 @@ function PowaAuras:DetermineRole(unit)
 	elseif class == "DRUID" then
 		local _, powerType = UnitPowerType(unit)
 		if powerType == "MANA" then
-			local _, _, buffExist = UnitBuff(unit, self.Spells.DRUID_SHIFT_MOONKIN,)
+			if self.Spells.DRUID_SHIFT_MOONKIN then
+				local _, _, buffExist = UnitBuff(unit, self.Spells.DRUID_SHIFT_MOONKIN,)
+			else
+				--Check with another method.
+			end	
 			if buffExist then
 				self.FixRoles[unitName] = "RoleRangeDps"
 				return "RoleRangeDps", "Guess"
