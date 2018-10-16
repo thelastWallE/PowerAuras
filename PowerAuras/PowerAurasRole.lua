@@ -176,7 +176,7 @@ function PowaAuras:DetermineRole(unit)
 		local _, powerType = UnitPowerType(unit)
 		if powerType == "MANA" then
 			if self.Spells.DRUID_SHIFT_MOONKIN then
-				local _, _, buffExist = UnitBuff(unit, self.Spells.DRUID_SHIFT_MOONKIN,)
+				local _, _, buffExist = UnitBuff(unit, self.Spells.DRUID_SHIFT_MOONKIN)
 			else
 				--Check with another method.
 			end	
